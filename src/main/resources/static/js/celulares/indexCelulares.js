@@ -1,5 +1,3 @@
-
-
 const app=new Vue({
     el:"#app",
     data:{
@@ -8,11 +6,12 @@ const app=new Vue({
         loading: true
     },
     created(){
-        var url='http://localhost:8080/celulares'
-        this.fetchData(url);
+        
+        this.fetchData();
     },
     methods:{
-        fetchData(url){
+        fetchData(){
+            var url='http://localhost:8080/celulares'
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
@@ -30,11 +29,15 @@ const app=new Vue({
             var options = {
                 method: 'DELETE',
                }
+
+            var self = this;
+
             fetch(url, options)
             .then(res => res.text()) // or res.json()
             .then(res => console.log(res))
-           // this.$forceUpdate();
-
+            .then(() => self.fetchData())
+           
+            
         }
     }
 })

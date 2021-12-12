@@ -29,8 +29,12 @@
                 <section v-else>
                     <div v-if="loading">Cargando...</div>
                     <div v-else>   
-                        <input type="text" placeholder="marca..." :value="marca.nombre"  id="txt_marca" />
-                         <button onclick="javascript:guardarMarca();">Editar</button> 
+                        <input type="text" placeholder="marca..." v-model="marca.nombre" />
+                         
+                         <button 
+                            v-on:click="editarMarca()"
+                            type="button"
+                            class="searchgray"> EDITAR LA MARCA</button> 
                     </div>
                 </section>           
             </div>

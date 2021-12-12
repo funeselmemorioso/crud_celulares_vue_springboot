@@ -1,3 +1,6 @@
+var miPagina = new URL(window.location.href);
+var idCelular = miPagina.searchParams.get("id");   
+
 const app=new Vue({
     el:"#app",
     data:{
@@ -6,11 +9,11 @@ const app=new Vue({
         errored:false,
         loading: true
     },
-    created(){         
-        this.loading = false;
-        this.traerMarcas();
+    created(){          
+        this.traerMarcas();        
+        this.fetchData();
     },
-    methods:{        
+    methods:{
         traerMarcas(){
             var url='http://localhost:8080/marcas'
             fetch(url)
@@ -24,24 +27,36 @@ const app=new Vue({
                     this.errored = true
                 })
         },
-        crearCelular(){
-            console.log(this.celular);    
-
-            let url="http://localhost:8080/celulares"
+        fetchData(){
+            var url='http://localhost:8080/celulares/' + idCelular
+            fetch(url)
+                .then(response => response.json())
+                .then(data => { 
+                    console.log(data.nombre);                  
+                    this.celular = data;                    
+                    //console.log(this.marca);
+                    this.loading = false;
+                })
+                .catch(err => {
+                    this.errored = true
+                })
+        },
+        editarCelular(){          
+            let url="http://localhost:8080/celulares" 
 
             var options = { 
                 body: JSON.stringify(this.celular),
-                method: 'POST',
+                method: 'PUT',
                 headers: {'Content-Type': 'application/json'},
                 redirect: 'follow'
             }
             fetch(url, options)
             .then(function() {
-                console.log("creado")        
+                alert("se actualizó OK") 
             })
             .catch(err => {        
                 console.error(err);
             })
-        }        
+        }
     }
 });

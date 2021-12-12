@@ -4,12 +4,11 @@ var idMarca = miPagina.searchParams.get("id");
 const app=new Vue({
     el:"#app",
     data:{
-        marca:{},
+        marca:{id:0, nombre:""},
         errored:false,
         loading: true
     },
-    created(){  
-        
+    created(){          
         var url='http://localhost:8080/marcas/' + idMarca
         this.fetchData(url);
     },
@@ -26,34 +25,23 @@ const app=new Vue({
                 .catch(err => {
                     this.errored = true
                 })
+        },
+        editarMarca(){          
+            let url="http://localhost:8080/marcas" 
+
+            var options = { 
+                body: JSON.stringify(this.marca),
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                redirect: 'follow'
+            }
+            fetch(url, options)
+            .then(function() {
+                alert("se actualizó OK") 
+            })
+            .catch(err => {        
+                console.error(err);
+            })
         }
     }
 });
-
-
-function guardarMarca(){
-
-    let nombre = document.querySelector("#txt_marca").value;   
-
-    let marca={
-        id:idMarca,
-        nombre: nombre
-    }
-
-    let url="http://localhost:8080/marcas" 
-
-    var options = { 
-        body: JSON.stringify(marca),
-        method: 'PUT',
-        headers: {'Content-Type': 'application/json'},
-        redirect: 'follow'
-    }
-    fetch(url, options)
-    .then(function() {
-        alert("se actualizó OK") 
-    })
-    .catch(err => {        
-        console.error(err);
-    })
-
-}

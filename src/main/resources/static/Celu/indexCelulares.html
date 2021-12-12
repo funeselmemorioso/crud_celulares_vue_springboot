@@ -55,8 +55,7 @@
                                 <td>{{celular.descripcion}}</td>
                                 <td>{{celular.memoria}}</td>
                                 <td>
-                                   <!-- <a :href="'update.html?id='+usuario.id+'&nombre='+usuario.nombre+'&email='+usuario.email+'&prioridad='+usuario.prioridad   "
-                                        class="btn btn-primary">Modificar</a> -->
+                                    <a :href="'editarCelular.html?id='+celular.id" class="btn btn-primary">Modificar</a>   
                                     <button v-on:click="eliminar(celular.id)" class="btn btn-danger"> Eliminar</button>
                                 </td> 
 

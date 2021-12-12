@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MArcas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -18,7 +18,7 @@
 <body>
     <main>
         <div class="container">
-            <h1>ALTA CELULAR</h1>
+            <h1>Editar Celular</h1>
 
             <div id="app">
                 <section v-if="errored">
@@ -29,6 +29,7 @@
                 <section v-else>
                     <div v-if="loading">Cargando...</div>
                     <div v-else>   
+
                         <div><a href="indexCelulares.html">Volver a celulares</a></div>
    
                         <br>   <br>   <br>
@@ -53,17 +54,16 @@
                         </div>
 
                          <br> 
-                       
-                        <button 
-                            v-on:click="crearCelular()"
+                         
+                         <button 
+                            v-on:click="editarCelular()"
                             type="button"
-                            class="searchgray"> DAR DE ALTA EL CELULAR</button> 
-                        
+                            class="searchgray"> EDITAR EL CELULAR</button> 
                     </div>
                 </section>           
             </div>
         </div>
     </main>
-    <script src="../js/celulares/altaCelular.js"></script>
+    <script src="../js/celulares/editarCelular.js"></script>
 </body>
 </html>
