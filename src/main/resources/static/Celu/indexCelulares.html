@@ -29,9 +29,10 @@
                 <section v-else>
                     <div v-if="loading">Cargando...</div>
                     <div v-else>
-
-                        <div><a href="indexMarcas.html">IR A INDEX MARCAS</a></div>
-                        <div><a href="altaCelular.html">CARGAR NUEVO CELULAR</a></div>
+<br>
+                        <div><a href="indexMarcas.html" class="btn btn-info">IR A INDEX MARCAS</a></div>
+                        <br>
+                        <div><a href="altaCelular.html" class="btn btn-success">CARGAR NUEVO CELULAR</a></div>
    
                         <br>   <br>   <br>
 
@@ -53,11 +54,13 @@
                                 <td>{{celular.modelo}}</td>
                                 <td>{{celular.marca.nombre}}</td>
                                 <td>{{celular.descripcion}}</td>
-                                <td>{{celular.memoria}}</td>
+                                <td>{{celular.memoria}} GB</td>
                                 <td>
-                                    <a :href="'editarCelular.html?id='+celular.id" class="btn btn-primary">Modificar</a>   
-                                    <button v-on:click="eliminar(celular.id)" class="btn btn-danger"> Eliminar</button>
+                                    <a :href="'editarCelular.html?id='+celular.id" class="btn btn-warning">Modificar</a>                                      
                                 </td> 
+                                <td>
+                                    <button v-on:click="eliminar(celular.id)" class="btn btn-danger"> Eliminar</button>
+                                </td>
 
                             </tr>
 

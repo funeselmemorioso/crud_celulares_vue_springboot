@@ -2,16 +2,15 @@ package com.example.demo.controllers;
 
 import java.util.ArrayList;
 import java.util.Optional;
-
 import com.example.demo.models.MarcaModel;
 import com.example.demo.services.MarcasService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/marcas")
 public class MarcasController {
+
     @Autowired
     MarcasService _marcasService;
 

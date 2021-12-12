@@ -30,9 +30,12 @@
                     <div v-if="loading">Cargando...</div>
                     <div v-else>
 
-                     <div><a href="altaMarca.html">AGREGAR NUEVA MARCA</a></div>
-                     <div><a href="indexCelulares.html">IR A INDEX CELULARES</a></div>
+                        <br>
 
+                     <div><a href="indexCelulares.html" class="btn btn-info">IR A INDEX CELULARES</a></div>
+                     <br>
+                     <div><a href="altaMarca.html" class="btn btn-success">AGREGAR NUEVA MARCA</a></div>
+                     
                      <br>   <br>   <br>
 
                         <table class="table table-striped ">
@@ -48,7 +51,9 @@
                                 <td>{{marca.nombre}}</td>
                          
                                 <td>
-                                    <a :href="'editarMarca.html?id='+marca.id" class="btn btn-primary">Modificar</a>                                       
+                                    <a :href="'editarMarca.html?id='+marca.id" class="btn btn-warning">Modificar</a>  
+                                </td> 
+                                <td>
                                     <button v-on:click="eliminar(marca.id)" class="btn btn-danger"> Eliminar</button>
                                 </td> 
                             </tr>
