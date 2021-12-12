@@ -8,5 +8,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CelularesRepository extends CrudRepository<CelularModel, Long> {
     public abstract ArrayList<CelularModel> findByModelo(String modelo);
-
 }

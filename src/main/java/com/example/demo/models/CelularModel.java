@@ -10,12 +10,10 @@ public class CelularModel {
     @Column(unique = true, nullable = false)
 
     private Long id;
-    // private String marca;
     private String modelo;
     private String descripcion;
     private String foto;
     private int memoria;
-    // private Long marc_id;
 
     @ManyToOne
     private MarcaModel marca;
@@ -26,8 +24,6 @@ public class CelularModel {
 
     public CelularModel(Long id, String modelo, String descripcion, String foto, int memoria, MarcaModel marca) {
         this.id = id;
-        // this.marca = marca;
-        // this.marc_id = marc_id;
         this.modelo = modelo;
         this.descripcion = descripcion;
         this.foto = foto;

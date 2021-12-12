@@ -18,7 +18,6 @@ public class MarcaModel {
     private List celulares;
 
     public MarcaModel() {
-
     }
 
     public MarcaModel(Long id, String nombre, List celulares) {
