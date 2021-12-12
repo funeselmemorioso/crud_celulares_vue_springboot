@@ -41,7 +41,6 @@
                                 <th>nombre</th>                            
                                 <th></th>
                                 <th></th>
-
                             </tr>
 
                             <tr v-for="marca in marcas">        
@@ -49,8 +48,7 @@
                                 <td>{{marca.nombre}}</td>
                          
                                 <td>
-                                   <!-- <a :href="'update.html?id='+usuario.id+'&nombre='+usuario.nombre+'&email='+usuario.email+'&prioridad='+usuario.prioridad   "
-                                        class="btn btn-primary">Modificar</a> -->
+                                    <a :href="'editarMarca.html?id='+marca.id" class="btn btn-primary">Modificar</a>                                       
                                     <button v-on:click="eliminar(marca.id)" class="btn btn-danger"> Eliminar</button>
                                 </td> 
 

@@ -16,7 +16,7 @@ function guardarMarca(){
     }
     fetch(url, options)
     .then(function() {
-        console.log("creada")        
+     alert('SE CREO OK');     
     })
     .catch(err => {        
         console.error(err);
